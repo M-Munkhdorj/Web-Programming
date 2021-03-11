@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar {
+  width: 600px;
+  height:500px;
+  background-color: #b8b8b8;
+  box-shadow: 4px 4px 4px;
+}
+
+.month {
+  width: 100%;
+  height: 100px;
+  background-color: #545454;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  text-align: center;
+  text-shadow: 1px 1px 3px black;
+}
+
+.month i {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.month h1 {
+  font-size: 35px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 15px;
+}
+
+.month p {
+  font-size: 15px;
+}
+
+.weekdays {
+  width: 100%;
+  height: 50px;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  background-color: #828282
+}
+
+.weekdays div {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  width: calc(1000px / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 1px 1px 1px black;
+}
+
+.days {
+  color: black;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+}
+
+.days div {
+  font-size: 20px;
+  margin: 8px;
+  width: calc(475px/ 7);
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 1px 1px 1px #c9c9c9;
+  transition: background-color 0.2s;
+}
+
+.days div:hover:not(.today) {
+  background-color: #545454;
+  border: 0.2rem solid #777;
+  cursor: pointer;
+}
+
+.prev-date,
+.next-date {
+  opacity: 0.4;
+}
+
+.today {
+  background-color: #545454;
+}
+
+.events{
+  font-size: 20px;
+  color: black;
+  margin: 5px;
+}
+
+.searchbar {
+  overflow: hidden;
+  background-color: #e9e9e9;
+  margin: 10px;
+  margin-left: 33%;
+  margin-right: 33%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  padding: 10px;
+}
+
+.searchbar a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.searchbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.searchbar a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.searchbar input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
