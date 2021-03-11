@@ -98,15 +98,14 @@ const list = document.getElementById('list');
 
 function setList(group){
     clearList();
-    let i = 0;
+
     for(const day of group){
       const item = document.createElement('li');
       item.classList.add('list-group-item');
-      const text = document.createTextNode(calendar[i])
+      const text = document.createTextNode(calendar.jan)
       item.appendChild(text);
       list.appendChild(item);
-      i++;
-    }
+         }
     if(group.length === 0){
       setNoResult();
     }
@@ -125,15 +124,30 @@ function setNoResult() {
       item.appendChild(text);
       list.appendChild(item);
 }
+
+function getRelevancy(value, searchTerm){
+    if(value === searchTerm){
+      return 2;
+    }
+    else if(value.startsWith(searchTerm)){
+      return 1;
+    }
+    else{
+      return 0;
+    }
+}
+
 const searchInput = document.getElementById('search');
 
 searchInput.addEventListener('input', (event) =>{
-  const value = event.target.value;
+  let value = event.target.value;
   if(value && value.trim.length > 0){
       value = value.trim().toLowerCase();
       setList(calendar.filter(day =>{
         return calendar[i].includes(value);
         
+      }).sort((dayA, dayB) =>{
+        return getRelevancy(dayA.jan, value) - getRelevancy(dayAjan, value);
       }))
   }
   else {
