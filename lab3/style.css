@@ -125,6 +125,9 @@ html {
   justify-content: center;
   align-self: center;
   padding: 10px;
+  text-shadow: 1px 1px 1px black;
+  box-shadow: 1px 1px 4px 1px;
+
 }
 
 .searchbar a {
@@ -135,6 +138,7 @@ html {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+
 }
 
 .searchbar a:hover {
@@ -154,4 +158,5 @@ html {
   margin-top: 8px;
   margin-right: 16px;
   font-size: 17px;
+    text-align: center;
 }
